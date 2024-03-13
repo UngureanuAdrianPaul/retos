@@ -1,10 +1,13 @@
 package ejercicio2;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.Buffer;
+
 import java.util.Scanner;
 
 public class Ejercicio2 {
@@ -66,7 +69,7 @@ public class Ejercicio2 {
                 System.out.println("Introduce - para finalizar");
                 nombre = teclado.nextLine();
 
-                if(!nombre.equals("-")) {
+                if (!nombre.equals("-")) {
                     escritor.write(nombre + "\n");
                 }
             } while (!nombre.equals("-"));
@@ -82,7 +85,33 @@ public class Ejercicio2 {
 
         teclado.close();
 
-        // Escritura en fichero
+        // Leer de uno.txt y sacarlo por pantalla y a la vez guardarlo en dos.txt
+
+        BufferedReader lector = null;
+        escritor = null;
+        try {
+            lector = new BufferedReader(new FileReader("dirEjer2//uno.txt"));
+            escritor = new BufferedWriter(new FileWriter("dirEjer2//dos.txt"));
+
+            nombre = lector.readLine();
+
+            while (nombre != null) {
+                System.out.println(lector + "\n");
+                escritor.write(nombre + "\n");
+                nombre = lector.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally { 
+            if (lector != null) {
+                lector.close();
+            }
+            if (escritor != null) {
+                escritor.close();
+            }
+        }
 
     }
 }
