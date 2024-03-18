@@ -2,18 +2,18 @@ package ejercicio4;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Ejercicio4 implements Serializable{
+public class Ejercicio4 {
 
     public static void main(String[] args) throws IOException {
 
@@ -57,7 +57,8 @@ public class Ejercicio4 implements Serializable{
         }
 
         // foreach
-
+        System.out.println("Sacado del arrayList: ");
+       
         for (Persona personaActual : personas) {
             System.out.println(personaActual.toString());
         }
@@ -68,7 +69,7 @@ public class Ejercicio4 implements Serializable{
 
         try {
             escritor = new ObjectOutputStream(
-                    new BufferedOutputStream(new FileOutputStream("src//ejercicio4//cuatro.dat")));
+                    new BufferedOutputStream(new FileOutputStream("src//ejercicio4//cuatro.txt")));
 
             for (Persona personaActual : personas) {
                 escritor.writeObject(personaActual);
@@ -84,26 +85,28 @@ public class Ejercicio4 implements Serializable{
 
             }
         }
-
+        System.out.println();
         // Leemos de fichero
-
+        System.out.println("Sacado con el flujo de entrada");
         ObjectInputStream lector = null;
-
+     
         try {
-           lector = new ObjectInputStream(
-                    new BufferedInputStream(new FileInputStream("src//ejercicio4//cuatro.dat")));
+            lector = new ObjectInputStream(
+                    new BufferedInputStream(new FileInputStream("src//ejercicio4//cuatro.txt")));
 
-            for (Persona personaActual : personas) {
-               personaActual = (Persona) lector.readObject();
-               System.out.println(personaActual.toString());
+            while (true) {
+
+                persona = (Persona) lector.readObject();
+                System.out.println(persona.toString());
             }
 
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
+        } catch (EOFException e) {
         } finally {
-            if (lector!= null) {
+            if (lector != null) {
                 lector.close();
 
             }
