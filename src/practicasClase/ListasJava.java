@@ -1,4 +1,4 @@
-package teoriaUD5;
+package practicasClase;
 
 import java.util.List;
 
