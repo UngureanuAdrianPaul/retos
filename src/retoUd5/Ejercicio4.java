@@ -1,4 +1,4 @@
-package ejercicio4;
+package retoUd5;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -12,8 +12,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import retoUd5.Persona;
 
 public class Ejercicio4 {
 
@@ -71,7 +69,7 @@ public class Ejercicio4 {
 
         try {
             escritor = new ObjectOutputStream(
-                    new BufferedOutputStream(new FileOutputStream("src//ejercicio4//cuatro.txt")));
+                    new BufferedOutputStream(new FileOutputStream("src//retoUd5//cuatro.txt")));
 
             for (Persona personaActual : personas) {
                 escritor.writeObject(personaActual);
@@ -94,7 +92,7 @@ public class Ejercicio4 {
      
         try {
             lector = new ObjectInputStream(
-                    new BufferedInputStream(new FileInputStream("src//ejercicio4//cuatro.txt")));
+                    new BufferedInputStream(new FileInputStream("src//retoUd5//cuatro.txt")));
 
             while (true) {
 

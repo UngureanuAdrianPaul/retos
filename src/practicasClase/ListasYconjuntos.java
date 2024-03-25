@@ -3,9 +3,10 @@ package practicasClase;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Iterator;
 
-import ejercicio4.Persona;
+import retoUd5.Persona;
+
+import java.util.Iterator;
 
 public class ListasYconjuntos {
     public static void main(String[] args) {

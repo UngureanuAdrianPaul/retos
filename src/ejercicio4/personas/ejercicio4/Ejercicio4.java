@@ -1,4 +1,4 @@
-package ejercicio4;
+package ejercicio4.personas.ejercicio4;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

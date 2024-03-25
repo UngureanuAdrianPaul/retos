@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import retoUd5.Persona;
+
 public class Ejer4Nuestro {
 
     public static void main(String[] args) throws IOException {

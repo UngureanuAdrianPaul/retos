@@ -1,4 +1,4 @@
-package ejercicio4;
+package ejercicio4.personas.ejercicio4;
 //crear un array de 1000 Persona
 
 import java.io.BufferedInputStream;
