@@ -1,4 +1,4 @@
-package ejercicio3;
+package retoUd5;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -40,7 +40,7 @@ public class Ejercicio3Nuestro {
         // FLUJO DE SALIDA (almacena objeto creado)
 
         ObjectOutputStream escritor = null;
-        String pathFichero = "src//ejercicio3//tresNuestro.dat";
+        String pathFichero = "src//retoUd5//tresNuestro.dat";
         try {
             escritor = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(pathFichero)));
             escritor.writeObject(alumnos[0]);
