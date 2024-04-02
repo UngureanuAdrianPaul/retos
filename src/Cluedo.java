@@ -15,7 +15,7 @@ public class Cluedo {
         jugador1.setNombre(personajesArray[0]);
         jugador1.setHabitacion(habitacionesArray[0]);
         jugador1.setHoraPartida();
-
+        //Estoy en privada
         System.out.println(jugador1.toString());
     }
 
