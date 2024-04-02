@@ -17,7 +17,6 @@ public class Cluedo {
         jugador1.setHoraPartida();
 
         System.out.println(jugador1.toString());
-
     }
 
 }

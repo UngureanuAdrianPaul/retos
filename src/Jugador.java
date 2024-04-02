@@ -48,7 +48,6 @@ public class Jugador {
     }
   
     //TOSTRING
-
     public String toString(){
          
         return "[Nombre: " + nombre + " , Arma: " + arma + " , Habitacion: " + habitacion + " , Hora: " + horaPartida + "]";
